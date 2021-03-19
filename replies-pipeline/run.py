@@ -2,7 +2,7 @@ import os
 import json
 import queue #from multiprocessing import Process, Queue
 from kafka import KafkaConsumer
-#from processing import *
+from processing import *
 
 def main():
     consumer_tweets = KafkaConsumer(
@@ -15,7 +15,7 @@ def main():
         auto_offset_reset='latest',
         enable_auto_commit=True)
 
-    #q = queue.Queue()
+    q = queue.Queue()
     #proc = Process(target=sentiment_analysis, args=(q,))
     #proc.start()
     i = 0
@@ -27,8 +27,8 @@ def main():
         if tweet_full['lang'] not in ['de', 'en', 'es', 'fr', 'it', 'pt'] and tweet_full['lang'] is not None:
             continue
 
-        print(i, tweet_full['text'])
-        #process_tweet(tweet_full, q)
+        # print(i, tweet_full['text'])
+        process_tweet(tweet_full, q)
 
     #proc.join()
 
