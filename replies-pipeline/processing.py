@@ -27,10 +27,9 @@ except psycopg2.OperationalError as err:
 
 q_insert_list = []
 
-classifier = pipeline("zero-shot-classification")
-
-sent_hypothesis_template = "The sentiment of this tweet is {}."
-sent_candidate_labels = ["positive", "negative"]
+#classifier = pipeline("zero-shot-classification")
+#sent_hypothesis_template = "The sentiment of this tweet is {}."
+#sent_candidate_labels = ["positive", "negative"]
 
 def sentiment_analysis(q):
     #while True:
