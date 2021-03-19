@@ -3,7 +3,7 @@ import logging
 import queue #from multiprocessing import Process, Queue
 #from transformers import pipeline
 from strdistance import jaro_sim
-#from helpers import *
+from helpers import *
 #from keywords import *
 
 import psycopg2
