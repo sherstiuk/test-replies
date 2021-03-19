@@ -2,7 +2,7 @@ from datetime import datetime
 #from geopy.geocoders import Nominatim
 import logging
 
-from factcheckers import domains
+#from factcheckers import domains
 
 geolocator = Nominatim(user_agent="app")
 
@@ -45,7 +45,7 @@ def condense_retweet(tw):
     }
 
     return tweet_dict
-
+"""
 def contains_factcheck_link(tweet):
     if 'urls' in tweet:
         if tweet['urls'] == []:
@@ -55,7 +55,7 @@ def contains_factcheck_link(tweet):
             return any(domain in link for domain in domains)
     else:
         return False
-
+"""
 def contains_factcheck(tweet):
     factcheck = False
     if 'urls' in tweet and tweet['urls'] != []:

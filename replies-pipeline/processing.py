@@ -84,8 +84,8 @@ def process_tweet(tweet, q):
     else:
         return
     
-    factcheck = contains_factcheck(tweet) # factchecking flag
-    tweet_small['factchecked'] = factcheck
+    #factcheck = contains_factcheck(tweet) # factchecking flag
+    #tweet_small['factchecked'] = factcheck
     #tweet_small['keywords'] = get_keywords(tweet_small['text'], tweet_small['lang'])
 
     q.put(tweet_small)
