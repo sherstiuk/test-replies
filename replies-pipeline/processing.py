@@ -10,7 +10,7 @@ import psycopg2
 import psycopg2.extras
 from psycopg2.extras import execute_values
 
-BATCH_SIZE = 50
+BATCH_SIZE = 5
 
 try:
     conn = psycopg2.connect(
@@ -41,8 +41,8 @@ def sentiment_analysis(q):
         neg_score = s_a['scores'][(s_a['labels'].index('negative'))]
         tw['positive_score'] = pos_score
         tw['negative_score'] = neg_score
-        
-        #print('Sentiment metrics calculated\n', tw, '\n')
+
+        print('>> Sentiment metrics calculated\n', tw, '\n')
         q_insert_list.append(tw)
         insert_bunch()
 
