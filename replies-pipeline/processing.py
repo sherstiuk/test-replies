@@ -36,13 +36,13 @@ def sentiment_analysis(q):
     if not q.empty():
         tw = q.get()
 
-        """s_a = classifier(tw['text'], sent_candidate_labels, hypothesis_template=sent_hypothesis_template)
+        s_a = classifier(tw['text'], sent_candidate_labels, hypothesis_template=sent_hypothesis_template)
         pos_score = s_a['scores'][(s_a['labels'].index('positive'))]
         neg_score = s_a['scores'][(s_a['labels'].index('negative'))]
         tw['positive_score'] = pos_score
-        tw['negative_score'] = neg_score"""
+        tw['negative_score'] = neg_score
 
-        print('Sentiment metrics calculated', tw, '\n')
+        print('Sentiment metrics calculated\n', tw, '\n')
         q_insert_list.append(tw)
         #insert_bunch()
 
