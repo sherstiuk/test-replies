@@ -63,7 +63,7 @@ def insert_bunch():
                 q_insert_list[:] = []
     return
 
-def process_tweet(tweet):
+def process_tweet(tweet, q):
     # checkig RT/Quote, quotes too similar = RT
     retweet = False
     if tweet['is_quote_status'] and 'quoted_status' in tweet:
