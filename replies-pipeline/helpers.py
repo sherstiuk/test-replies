@@ -20,7 +20,7 @@ def condense_tweet(tw):
         # 'is_quote_status': tw['is_quote_status'],
         'user_verified': tw['user']['verified'],
         'user_followers': tw['user']['followers_count'],
-        'country': get_country_code(tw)
+        #'country': get_country_code(tw)
     }
 
     return tweet_dict
@@ -41,7 +41,7 @@ def condense_retweet(tw):
         # 'is_quote_status': tw['is_quote_status'],
         'user_verified': tw['user']['verified'],
         'user_followers': tw['user']['followers_count'], # importance of user: verified, followers_count
-        'country': get_country_code(tw)
+        #'country': get_country_code(tw)
     }
 
     return tweet_dict
