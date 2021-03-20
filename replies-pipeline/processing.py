@@ -10,7 +10,7 @@ import psycopg2
 import psycopg2.extras
 from psycopg2.extras import execute_values
 
-BATCH_SIZE = 5
+BATCH_SIZE = 10
 
 try:
     conn = psycopg2.connect(
@@ -50,13 +50,11 @@ def insert_bunch():
     if len(q_insert_list) > BATCH_SIZE:
         with conn.cursor() as cur:
             try:
-                """
                 columns = q_insert_list[0].keys()
                 query = 'INSERT INTO public."Tweets" ({}) VALUES %s'.format(','.join(columns))
                 values = [[value for value in q.values()] for q in q_insert_list]
                 execute_values(cur, query, values)
                 conn.commit()
-                """
                 print('Inserted', len(q_insert_list))
                 
             except Exception as exc:
