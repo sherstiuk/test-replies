@@ -63,7 +63,7 @@ def insert_bunch():
                 q_insert_list[:] = []
     return
 
-def process_tweet(tweet, q):
+def process_tweet(tweet):
     # checkig RT/Quote, quotes too similar = RT
     retweet = False
     if tweet['is_quote_status'] and 'quoted_status' in tweet:
@@ -89,6 +89,6 @@ def process_tweet(tweet, q):
     #tweet_small['keywords'] = get_keywords(tweet_small['text'], tweet_small['lang'])
 
     q.put(tweet_small)
-    #sentiment_analysis(q)
+    sentiment_analysis(q)
 
     return
