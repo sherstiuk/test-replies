@@ -55,7 +55,7 @@ def insert_bunch():
                 values = [[value for value in q.values()] for q in q_insert_list]
                 execute_values(cur, query, values)
                 conn.commit()
-                print('Inserted', len(q_insert_list))
+                print(':: Inserted', len(q_insert_list))
                 
             except Exception as exc:
                 logging.warning("Error executing SQL: %s" % exc)
